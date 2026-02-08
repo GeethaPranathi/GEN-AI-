@@ -1,6 +1,5 @@
 # Introduction to Generative AI and Large Language Models (LLMs)
 
-## Seminar Duration: ~40 Minutes
 
 ---
 
@@ -34,10 +33,6 @@ Traditional AI systems focus on **prediction and classification** based on input
 
 Early AI systems worked using **predefined rules** written by humans.
 
-**Characteristics:**
-- Rigid and inflexible
-- No learning capability
-- Failed in complex or dynamic environments
 
 **Example:**
 - If–else logic
