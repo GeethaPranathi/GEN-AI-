@@ -247,7 +247,6 @@ Generative AI and Large Language Models are transforming how humans interact wit
 
 # Natural Language Processing (NLP)
 
----
 
 ## 1. What is Natural Language Processing (NLP)?
 
