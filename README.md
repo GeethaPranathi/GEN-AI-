@@ -322,7 +322,9 @@ Text: "NLP is powerful. It is used in chatbots. Tokenization is the first step."
 ```
 
 ### NLTK Code
+
 ```
+
 from nltk.tokenize import sent_tokenize
 import nltk
 
@@ -332,9 +334,14 @@ text = "NLP is powerful. It is used in chatbots. Tokenization is the first step.
 sentences = sent_tokenize(text)
 
 print(sentences)
+
 ```
+
 ### Output
+
 ```
+
 ['NLP is powerful.', 'It is used in chatbots.', 'Tokenization is the first step.']
+
 ```
 
