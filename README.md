@@ -245,6 +245,176 @@ Generative AI and Large Language Models are transforming how humans interact wit
 
 ---
 
+# Prompting
+---
+## What is a Prompt?
+
+A **prompt** is the input given to a generative AI model to guide its response.
+
+- It can be a **question**, **instruction**, or **text** that tells the AI what task to perform.
+- The **quality, clarity, and structure** of a prompt directly affect the accuracy and usefulness of the AI’s output.
+
+## Example
+
+**Prompt:**  
+> Explain machine learning in simple terms.
+
+➡️ The AI generates a **beginner-friendly explanation** based on the instruction.
+
+---
+
+# Types of Prompts
+
+## 1. Zero-Shot Prompting
+
+Zero-shot prompting means asking the AI to perform a task **without providing any examples**.
+
+### Characteristics
+- Uses the model’s pretrained knowledge  
+- Simple and quick  
+- Output depends heavily on prompt clarity  
+
+### Example Prompt
+> Explain what Natural Language Processing is.
+
+### Use Cases
+- Simple explanations  
+- General questions  
+- Broad reasoning tasks  
+
+---
+
+## 2. One-Shot Prompting
+
+One-shot prompting provides **one example** to guide the AI’s response.
+
+### Characteristics
+- Improves accuracy compared to zero-shot  
+- Helps define output format  
+- Easy to implement  
+
+### Example Prompt
+> Translate English to French.  
+> Example: Hello → Bonjour  
+> Now translate: Thank you
+
+### Use Cases
+- Slightly complex tasks  
+- Format-sensitive outputs  
+
+---
+
+## 3. Few-Shot Prompting
+
+Few-shot prompting provides **multiple examples** so the AI can identify patterns.
+
+### Characteristics
+- Improves consistency and reliability  
+- Helps with classification and pattern recognition  
+- Uses more tokens  
+
+### Example Prompt
+> Classify sentiment:  
+> "I love this movie" → Positive  
+> "I hate delays" → Negative  
+> "The service was okay" → ?
+
+### Use Cases
+- Sentiment analysis  
+- Classification tasks  
+- Structured outputs  
+
+---
+
+## 4. Instruction-Based Prompting
+
+The AI is given **clear and direct instructions** about the task.
+
+### Characteristics
+- Easy to control output  
+- Reduces ambiguity  
+- Works well for structured tasks  
+
+### Example Prompt
+> Summarize the following paragraph in 3 bullet points.
+
+### Use Cases
+- Summarization  
+- Content generation  
+- Step-by-step explanations  
+
+---
+
+## 5. Role-Based Prompting
+
+In role-based prompting, the AI is assigned a **specific role or persona**.
+
+### Characteristics
+- Produces domain-specific answers  
+- Improves explanation quality  
+- Useful for expert-level responses  
+
+### Example Prompt
+> You are a data scientist. Explain overfitting to a beginner.
+
+### Use Cases
+- Teaching concepts  
+- Professional explanations  
+- Domain-focused tasks  
+
+---
+
+## 6. Chain-of-Thought Prompting
+
+Chain-of-thought prompting encourages the AI to **reason step by step** before giving the final answer.
+
+### Characteristics
+- Improves logical reasoning  
+- Makes answers more explainable  
+- Useful for multi-step problems  
+
+### Example Prompt
+> Solve step by step:  
+> If a shirt costs 500 and has a 20% discount, what is the final price?
+
+### Use Cases
+- Math problems  
+- Logical reasoning  
+- Complex decision-making  
+
+---
+
+# Components of a Good Prompt
+
+A well-structured prompt usually contains the following components:
+
+## 1. Role
+Defines who the AI should act as.  
+**Example:**  
+> You are a data science instructor.
+
+## 2. Task
+Clearly states what the AI should do.  
+**Example:**  
+> Explain overfitting.
+
+## 3. Context
+Provides background information.  
+**Example:**  
+> Explain to a beginner.
+
+## 4. Constraints
+Limits length, style, or format.  
+**Example:**  
+> Limit the answer to 5 bullet points.
+
+## 5. Output Format
+Specifies how the output should look.  
+**Example:**  
+> Answer in bullet points.
+
+---
+
 # Natural Language Processing (NLP)
 ---
 ## 1. What is Natural Language Processing (NLP)?
@@ -447,11 +617,13 @@ print(lemmatized_words)
 | Produces valid words | Not always | Yes           |
 ---
 ## 10. Summary
-- Normalization standardizes text
-- Sentence Tokenization splits text into sentences
-- Word Tokenization splits sentences into tokens
-- Stemming removes suffixes quickly
-- Lemmatization produces meaningful base words
+- **Normalization** standardizes text
+- **Sentence Tokenization** splits text into sentences
+- **Word Tokenization** splits sentences into tokens
+- **Stemming removes** suffixes quickly
+- **Lemmatization** produces meaningful base words
+---
+
 
 
 
