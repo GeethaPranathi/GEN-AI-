@@ -245,3 +245,54 @@ Generative AI and Large Language Models are transforming how humans interact wit
 
 ---
 
+# Natural Language Processing (NLP)
+
+---
+
+## 1. What is Natural Language Processing (NLP)?
+
+Natural Language Processing (NLP) is a branch of Artificial Intelligence that enables machines to **understand, interpret, and process human language** in a meaningful way.
+
+NLP is widely used in:
+- Chatbots and virtual assistants
+- Search engines
+- Sentiment analysis
+- Text summarization
+- Language translation
+- Question answering systems
+
+---
+
+## 2. Why NLP is Needed
+
+Human language is:
+- Unstructured
+- Ambiguous
+- Context-dependent
+
+Machines require **structured and numerical data**, so NLP acts as a bridge between human language and machine understanding.
+
+---
+
+## 3. NLP Processing Pipeline (Order)
+
+The typical NLP preprocessing flow is:
+
+1. Text Normalization  
+2. Sentence Tokenization  
+3. Word Tokenization  
+4. Stemming  
+5. Lemmatization  
+
+---
+
+## 4. Text Normalization
+
+Text normalization converts raw text into a **standard and consistent format**.
+
+### Normalization Includes:
+- Converting text to lowercase
+- Removing punctuation
+- Removing extra spaces
+
+### Example
