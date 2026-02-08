@@ -323,7 +323,7 @@ Text: "NLP is powerful. It is used in chatbots. Tokenization is the first step."
 
 ### NLTK Code
 
-```
+```python
 
 from nltk.tokenize import sent_tokenize
 import nltk
