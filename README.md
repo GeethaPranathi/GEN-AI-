@@ -300,3 +300,14 @@ Text normalization converts raw text into a **standard and consistent format**.
 **Original Text:** My name is Geetha Pranathi
 
 **Normalized Text:** my name is geetha pranathi
+
+### Python Code
+```python
+import re
+
+text = "My name is Geetha Pranathi"
+normalized_text = text.lower()
+normalized_text = re.sub(r'[^\w\s]', '', normalized_text)
+
+print(normalized_text)
+
