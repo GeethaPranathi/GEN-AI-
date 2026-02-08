@@ -415,6 +415,42 @@ Specifies how the output should look.
 
 ---
 
+# Chatbot Creation Using Google Gemini API and Flask
+
+AI chatbots are built using a request–response lifecycle, which defines how user input is processed and returned as an intelligent response.
+
+## Request–Response Lifecycle 
+
+First, the user sends input from a user interface.The backend server receives this request and extracts the message.The prompt is sent to the Large Language Model (LLM) API.The LLM processes the prompt and generates a response.The response is returned to the backend, which sends it back to the user.  
+This lifecycle is the foundation of chatbots, assistants, RAG systems, and AI agents.
+
+## Google GenAI (Gemini) API 
+- Google GenAI provides access to Gemini models through a Python SDK.  
+- These models generate human-like responses and can be integrated into applications using an API key.  
+- Core elements include client initialization, model selection, prompt input, and generated output.
+
+## Flask as Backend Server  
+- Flask is a lightweight Python web framework used to build APIs.  
+- In this system, Flask acts as the backend server that receives user requests, sends prompts to Gemini, and returns responses using JSON.
+
+## Prompting: API vs Chat UI 
+- Chat UI is manual and mainly used for testing.  
+- API-based prompting is automated, scalable, and suitable for production systems.
+
+## Important API Parameters  
+- The model controls capability and speed.  
+- The prompt defines the input.  
+- Tokens control output length.  
+- Temperature controls creativity versus accuracy.
+
+## Security Best Practices  
+- API keys should never be hardcoded.  
+- They must be stored using environment variables and never exposed in frontend code.
+
+## Use Cases  
+Web-based chatbots, customer support systems, internal AI tools, and backends for RAG and agent systems.
+--- 
+
 # Natural Language Processing (NLP)
 ---
 ## 1. What is Natural Language Processing (NLP)?
