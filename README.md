@@ -301,7 +301,6 @@ Text normalization converts raw text into a **standard and consistent format**.
 
 **Normalized Text:** my name is geetha pranathi
 
-### Python Code
 ```python
 import re
 
@@ -310,4 +309,14 @@ normalized_text = text.lower()
 normalized_text = re.sub(r'[^\w\s]', '', normalized_text)
 
 print(normalized_text)
+
+---
+
+## 5. Sentence Tokenization
+
+
+
+Sentence tokenization splits a paragraph into individual sentences.
+
+Example
 
