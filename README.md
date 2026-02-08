@@ -318,7 +318,7 @@ print(normalized_text)
 Sentence tokenization splits a **paragraph into individual sentences.**
 ### Example
 ```python
-**Text:** "NLP is powerful. It is used in chatbots. Tokenization is the first step."
+Text:"NLP is powerful. It is used in chatbots. Tokenization is the first step."
 ```
 
 ### NLTK Code
@@ -339,7 +339,7 @@ print(sentences)
 
 ### Output
 
-```python
+```css
 
 ['NLP is powerful.', 'It is used in chatbots.', 'Tokenization is the first step.']
 
@@ -373,8 +373,40 @@ print(words)
 ```
 ### Output
 
-```python
+```css
 ['NLP', 'is', 'powerful', '.', 'It', 'is', 'used', 'in', 'chatbots', '.']
 ```
+## 7. Stemming (Porter Stemmer)
+
+Stemming reduces words to their **root form** by removing suffixes using rule-based logic.
+
+It is **fast**, but may not always produce meaningful words.
+
+### Example
+
+```arduino
+running → run
+runs → run
+runner → runner
+easily → easili
+```
+
+### NLTK Code
+
+```python
+from nltk.stem import PorterStemmer
+
+stemmer = PorterStemmer()
+words = ["running", "runs", "runner", "easily"]
+
+stemmed_words = [stemmer.stem(word) for word in words]
+print(stemmed_words)
+```
+### Output
+
+```css
+['run', 'run', 'runner', 'easili']
+```
+
 
 
