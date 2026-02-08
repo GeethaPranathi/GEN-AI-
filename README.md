@@ -298,4 +298,5 @@ Text normalization converts raw text into a **standard and consistent format**.
 ### Example
 
 **Original Text:** My name is Geetha Pranathi
+
 **Normalized Text:** my name is geetha pranathi
