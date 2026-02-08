@@ -436,4 +436,15 @@ print(lemmatized_words)
 ```css
 ['running', 'car', 'better', 'foot']
 ```
+---
+## 9. Stemming vs Lemmatization
+
+| Feature              | Stemming   | Lemmatization |
+| -------------------- | ---------- | ------------- |
+| Speed                | Faster     | Slower        |
+| Accuracy             | Lower      | Higher        |
+| Context aware        | No         | Yes           |
+| Produces valid words | Not always | Yes           |
+
+
 
