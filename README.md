@@ -229,16 +229,6 @@ They are trained on **massive amounts of text data** using deep learning and tra
 
 ---
 
-### LLMs vs Traditional NLP Models
-
-| Feature | Traditional NLP | LLMs |
-|------|----------------|------|
-| Task-specific models | Yes | No |
-| Context awareness | Limited | High |
-| Scalability | Low | Very High |
-| Zero-shot learning | No | Yes |
-
----
 
 ### Role of LLMs in Modern GenAI Applications
 
@@ -255,9 +245,3 @@ Generative AI and Large Language Models are transforming how humans interact wit
 
 ---
 
-## 9. References
-
-- OpenAI Documentation
-- Google AI Research
-- Hugging Face
-- Meta AI Research
