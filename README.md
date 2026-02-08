@@ -257,7 +257,7 @@ A **prompt** is the input given to a generative AI model to guide its response.
 ## Example
 
 **Prompt:**  
- Explain machine learning in simple terms.
+ - Explain machine learning in simple terms.
 
 ➡️ The AI generates a **beginner-friendly explanation** based on the instruction.
 
@@ -275,7 +275,7 @@ Zero-shot prompting means asking the AI to perform a task **without providing an
 - Output depends heavily on prompt clarity  
 
 ### Example Prompt
-> Explain what Natural Language Processing is.
+- Explain what Natural Language Processing is.
 
 ### Use Cases
 - Simple explanations  
@@ -294,9 +294,9 @@ One-shot prompting provides **one example** to guide the AI’s response.
 - Easy to implement  
 
 ### Example Prompt
-> Translate English to French.  
-> Example: Hello → Bonjour  
-> Now translate: Thank you
+- Translate English to French.  
+- **Example:** Hello → Bonjour  
+- **Now translate:** Thank you
 
 ### Use Cases
 - Slightly complex tasks  
@@ -314,10 +314,10 @@ Few-shot prompting provides **multiple examples** so the AI can identify pattern
 - Uses more tokens  
 
 ### Example Prompt
-> Classify sentiment:  
-> "I love this movie" → Positive  
-> "I hate delays" → Negative  
-> "The service was okay" → ?
+- Classify sentiment:  
+- "I love this movie" → Positive  
+- "I hate delays" → Negative  
+- "The service was okay" → ?
 
 ### Use Cases
 - Sentiment analysis  
@@ -336,7 +336,7 @@ The AI is given **clear and direct instructions** about the task.
 - Works well for structured tasks  
 
 ### Example Prompt
-> Summarize the following paragraph in 3 bullet points.
+- Summarize the following paragraph in 3 bullet points.
 
 ### Use Cases
 - Summarization  
@@ -355,7 +355,7 @@ In role-based prompting, the AI is assigned a **specific role or persona**.
 - Useful for expert-level responses  
 
 ### Example Prompt
-> You are a data scientist. Explain overfitting to a beginner.
+- You are a data scientist. Explain overfitting to a beginner.
 
 ### Use Cases
 - Teaching concepts  
@@ -374,8 +374,8 @@ Chain-of-thought prompting encourages the AI to **reason step by step** before g
 - Useful for multi-step problems  
 
 ### Example Prompt
-> Solve step by step:  
-> If a shirt costs 500 and has a 20% discount, what is the final price?
+ **Solve step by step:**  
+- If a shirt costs 500 and has a 20% discount, what is the final price?
 
 ### Use Cases
 - Math problems  
@@ -391,27 +391,27 @@ A well-structured prompt usually contains the following components:
 ## 1. Role
 Defines who the AI should act as.  
 **Example:**  
-> You are a data science instructor.
+- You are a data science instructor.
 
 ## 2. Task
 Clearly states what the AI should do.  
 **Example:**  
-> Explain overfitting.
+- Explain overfitting.
 
 ## 3. Context
 Provides background information.  
 **Example:**  
-> Explain to a beginner.
+- Explain to a beginner.
 
 ## 4. Constraints
 Limits length, style, or format.  
 **Example:**  
-> Limit the answer to 5 bullet points.
+- Limit the answer to 5 bullet points.
 
 ## 5. Output Format
 Specifies how the output should look.  
 **Example:**  
-> Answer in bullet points.
+- Answer in bullet points.
 
 ---
 
@@ -623,6 +623,203 @@ print(lemmatized_words)
 - **Stemming removes** suffixes quickly
 - **Lemmatization** produces meaningful base words
 ---
+# ATS (Applicant Tracking System) using Gemini GenAI
+
+---
+
+## Overview
+
+An **Applicant Tracking System (ATS)** is a software system used by companies to automatically analyze resumes and match them with job descriptions.  
+It helps recruiters shortlist candidates efficiently by reducing manual effort.
+
+In this project, a **GenAI-powered ATS** is designed using **Google Gemini** to intelligently understand and compare resumes and job descriptions.
+
+### Key Capabilities
+- Accept resume in PDF format
+- Extract text from resume
+- Understand resume content using LLM reasoning
+- Parse job description requirements
+- Compare resume and job description
+- Generate AI-based match score and feedback
+
+This project demonstrates **real-world Generative AI usage in HR and recruitment systems**.
+
+---
+
+## Problem Statement
+
+Manual resume screening suffers from multiple limitations:
+
+- Time-consuming
+- Prone to human bias
+- Error-prone
+- Not scalable for large hiring volumes
+
+The goal of this ATS system is to **automate resume evaluation using GenAI-powered reasoning**, ensuring faster, fairer, and scalable hiring.
+
+---
+
+## System Flow
+
+1. User uploads a resume in PDF format
+2. Backend extracts raw text from the PDF
+3. Resume text is sent to Gemini GenAI for understanding
+4. Job description text is also parsed using Gemini
+5. ATS logic compares both outputs
+6. AI-generated evaluation is returned as structured JSON
+
+---
+
+## Technology Stack
+
+- **Python** – Backend logic
+- **Flask** – API framework
+- **PyPDF2** – PDF text extraction
+- **Google Gemini GenAI** – LLM reasoning
+- **JSON** – Structured output format
+
+---
+
+## Resume Parsing using GenAI
+
+Resume parsing means converting **unstructured resume text** into structured information such as:
+
+- Skills
+- Experience
+- Education
+- Tools & technologies
+
+### Why LLM-Based Parsing?
+
+Traditional parsing techniques (regex, keyword matching) are limited and rigid.  
+LLM-based parsing offers:
+
+- Context-aware understanding
+- Better handling of varied resume formats
+- Industry-aligned interpretation
+- Higher accuracy
+
+---
+
+## PDF Text Extraction
+
+LLMs cannot directly process PDF files. Therefore:
+
+- Resume is uploaded as a PDF
+- PDF parsing library extracts raw text
+- Extracted text is passed to Gemini GenAI
+
+This step bridges the gap between **document formats** and **LLM reasoning**.
+
+---
+
+## Job Description Parsing
+
+The job description is analyzed to extract:
+
+- Required skills
+- Responsibilities
+- Preferred qualifications
+- Role expectations
+
+Parsing both resume and job description ensures **structured and fair comparison**.
+
+---
+
+## ATS Matching Logic
+
+The ATS system compares:
+
+- Parsed resume details
+- Parsed job description requirements
+
+Gemini GenAI evaluates:
+
+- Skill overlap
+- Experience relevance
+- Missing competencies
+
+### AI-Generated Output Includes:
+- Match percentage (0–100)
+- Matching skills
+- Missing skills
+- Candidate strengths
+- Improvement suggestions
+
+---
+
+## API Design (Conceptual)
+
+The system exposes a single API endpoint:
+```
+POST /analyze
+```
+The endpoint:
+
+- Accepts resume PDF via multipart/form-data
+- Accepts job description as text
+- Returns structured ATS evaluation
+
+---
+
+## Sample Input
+
+**Resume:** resume.pdf  
+**Job Description:** Backend developer with Python, NLP, and API experience
+
+---
+
+## Sample Output
+
+- Match Percentage: 85–90%
+- Matching Skills: Python, NLP, APIs
+- Missing Skills: Cloud deployment
+- Suggestions: Add cloud-based project experience
+
+---
+
+## Key Concepts Covered
+
+- File upload handling
+- PDF parsing
+- LLM-based document understanding
+- Prompt engineering
+- Real-world GenAI workflows
+- ATS system design
+
+---
+
+## Learning Outcomes
+
+By the end of this module, learners will be able to:
+
+- Understand how ATS systems work in industry
+- Build GenAI-powered document analysis pipelines
+- Parse unstructured documents using LLMs
+- Design production-style GenAI APIs
+- Apply GenAI to real-world business problems
+
+---
+
+## Optional Enhancements
+
+- Convert outputs into strict JSON schema
+- Add embeddings for semantic matching
+- Build a frontend UI for resume upload
+- Store ATS results in a database
+- Extend system into a RAG-based ATS
+
+---
+
+## Summary
+
+This ATS system combines **PDF parsing**, **LLM reasoning**, and **backend design** to simulate a real-world recruitment application.  
+It demonstrates how Generative AI can transform traditional HR workflows into intelligent, scalable systems.
+
+---
+
+
+
 
 
 
