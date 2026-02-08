@@ -445,6 +445,14 @@ print(lemmatized_words)
 | Accuracy             | Lower      | Higher        |
 | Context aware        | No         | Yes           |
 | Produces valid words | Not always | Yes           |
+---
+## 10. Summary
+- Normalization standardizes text
+- Sentence Tokenization splits text into sentences
+- Word Tokenization splits sentences into tokens
+- Stemming removes suffixes quickly
+- Lemmatization produces meaningful base words
+
 
 
 
