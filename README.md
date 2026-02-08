@@ -317,8 +317,8 @@ print(normalized_text)
 
 Sentence tokenization splits a **paragraph into individual sentences.**
 ### Example
-```
-Text: "NLP is powerful. It is used in chatbots. Tokenization is the first step."
+```python
+**Text:** "NLP is powerful. It is used in chatbots. Tokenization is the first step."
 ```
 
 ### NLTK Code
@@ -339,9 +339,42 @@ print(sentences)
 
 ### Output
 
-```
+```python
 
 ['NLP is powerful.', 'It is used in chatbots.', 'Tokenization is the first step.']
 
 ```
+---
+## 6. Word Tokenization
+
+Word tokenization splits text into **individual words and punctuation.**
+
+**What is a Token?**
+
+A **token** is the **smallest meaningful unit of text** processed by an NLP system.
+In word tokenization, each word or punctuation mark becomes a token.
+
+### Example
+
+```python
+Sentence: my name is geetha pranathi
+Tokens: ["my", "name", "is", "geetha", "pranathi"]
+```
+
+### NLTK Code
+
+```python
+from nltk.tokenize import word_tokenize
+
+text = "NLP is powerful. It is used in chatbots."
+words = word_tokenize(text)
+
+print(words)
+```
+### Output
+
+```python
+['NLP', 'is', 'powerful', '.', 'It', 'is', 'used', 'in', 'chatbots', '.']
+```
+
 
