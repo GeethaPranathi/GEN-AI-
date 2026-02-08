@@ -315,4 +315,26 @@ print(normalized_text)
 
 ## 5. Sentence Tokenization
 
+Sentence tokenization splits a **paragraph into individual sentences.**
+### Example
+```
+Text: "NLP is powerful. It is used in chatbots. Tokenization is the first step."
+```
+
+### NLTK Code
+```
+from nltk.tokenize import sent_tokenize
+import nltk
+
+nltk.download('punkt')
+
+text = "NLP is powerful. It is used in chatbots. Tokenization is the first step."
+sentences = sent_tokenize(text)
+
+print(sentences)
+```
+### Output
+```
+['NLP is powerful.', 'It is used in chatbots.', 'Tokenization is the first step.']
+```
 
