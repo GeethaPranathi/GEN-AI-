@@ -310,13 +310,17 @@ normalized_text = re.sub(r'[^\w\s]', '', normalized_text)
 
 print(normalized_text)
 
+
+⚠️ The **second set of ``` is mandatory**.
+
 ---
 
-## 5. Sentence Tokenization
+### 2️⃣ Write definition OUTSIDE the code box
 
+Leave **one empty line** after closing the code block, then write normally:
 
+```markdown
+## Sentence Tokenization
 
-Sentence tokenization splits a paragraph into individual sentences.
-
-Example
+Sentence tokenization is the process of splitting a paragraph into individual sentences.
 
