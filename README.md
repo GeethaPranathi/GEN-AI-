@@ -751,9 +751,9 @@ Gemini GenAI evaluates:
 ## API Design (Conceptual)
 
 The system exposes a single API endpoint:
-```
+
 POST /analyze
-```
+
 The endpoint:
 
 - Accepts resume PDF via multipart/form-data
@@ -817,6 +817,219 @@ This ATS system combines **PDF parsing**, **LLM reasoning**, and **backend desig
 It demonstrates how Generative AI can transform traditional HR workflows into intelligent, scalable systems.
 
 ---
+# LLM Evaluation – Theory & Conceptual Practical Examples
+
+---
+
+## 1️. Introduction to LLM Evaluation
+
+**LLM Evaluation** is the process of measuring how well a **Large Language Model (LLM)** performs on a given task.
+
+Unlike traditional machine learning models, LLM outputs are **open-ended**, so evaluation focuses on **quality**, not just correctness.
+
+### Evaluation Focus Areas
+- Correctness
+- Clarity
+- Relevance
+- Instruction following
+- Safety and bias
+
+---
+
+## 2️. Why LLM Evaluation is Important
+
+Large Language Models may:
+
+- Hallucinate incorrect facts
+- Produce fluent but misleading responses
+- Give inconsistent answers to similar prompts
+- Fail silently in real-world applications
+
+Therefore, LLM evaluation is:
+- Continuous
+- Multi-dimensional
+- Essential for production systems
+
+---
+
+## 3️. Traditional ML vs LLM Evaluation
+
+| Traditional ML | LLM Evaluation |
+|---------------|----------------|
+| Fixed outputs | Open-ended text |
+| Single correct answer | Multiple valid answers |
+| Accuracy-based | Quality-based |
+| Fully automated | Requires judgment |
+
+---
+
+## 4️. Types of LLM Evaluation
+
+### 4.1 Automatic (Metric-Based) Evaluation
+
+Used when a **reference answer** exists.
+
+#### Common Metrics
+- Accuracy
+- Precision / Recall / F1
+- Exact Match
+- BLEU / ROUGE
+
+#### Suitable For
+- Text classification
+- Named Entity Recognition
+- Question answering with known answers
+
+ Limited for creative or reasoning tasks.
+
+---
+
+### 4.2 Human Evaluation
+
+Human evaluators score responses based on:
+
+- Correctness
+- Clarity
+- Relevance
+- Tone
+
+#### Limitations
+- Expensive
+- Time-consuming
+- Subjective
+
+---
+
+### 4.3 LLM-as-a-Judge (Industry Standard)
+
+A powerful LLM evaluates another LLM’s output using a **rubric-based prompt**.
+
+#### Advantages
+- Scalable
+- Cost-effective
+- Suitable for reasoning tasks
+
+#### Limitation
+- Potential judge bias
+
+---
+
+## 5️. Evaluation Dimensions
+
+Common dimensions used to evaluate LLM outputs:
+
+- Correctness
+- Instruction following
+- Clarity & coherence
+- Factual accuracy
+- Hallucination rate
+- Safety & toxicity
+- Bias and fairness
+
+---
+
+## 6️ Offline vs Online Evaluation
+
+### Offline Evaluation
+- Conducted before deployment
+- Uses fixed test datasets
+- Used for benchmarking
+
+### Online Evaluation
+- Conducted after deployment
+- Uses user feedback and logs
+- Helps monitor real-world performance
+
+---
+
+## 7️. Conceptual Practical Examples
+
+### 🔹 Practical Example 1: LLM-as-a-Judge
+
+**Scenario:**  
+A model is asked:  
+> *"What is tokenization in NLP?"*
+
+**Model Response:**  
+> "Tokenization is the process of breaking text into smaller units called tokens."
+
+**Evaluation Approach:**  
+Another LLM evaluates this answer based on:
+- Correctness
+- Clarity
+- Relevance
+
+**Result:**  
+High-quality response with correct and clear explanation.
+
+---
+
+### 🔹 Practical Example 2: Metric-Based Evaluation
+
+**Reference Answer:**  
+> "Tokenization splits text into words or sentences."
+
+**Model Output:**  
+> "Tokenization breaks text into tokens."
+
+**Evaluation:**  
+- Exact Match: ❌  
+- Semantic Match: ✅  
+
+This shows metric-based evaluation works well when reference answers exist.
+
+---
+
+### 🔹 Practical Example 3: Human Evaluation
+
+A human evaluator scores the response:
+
+| Criteria | Score (1–5) |
+|--------|-------------|
+| Correctness | 4 |
+| Clarity | 5 |
+| Instruction Following | 5 |
+| Safety | 5 |
+
+This approach is useful but not scalable.
+
+---
+
+## 8️. Popular LLM Evaluation Tools
+
+| Tool | Purpose |
+|-----|--------|
+| OpenEvals | LLM-as-a-Judge evaluation |
+| DeepEval | Test-driven LLM evaluation |
+| lm-evaluation-harness | Benchmarking LLMs |
+| Hugging Face Evaluate | BLEU, ROUGE, BERTScore |
+| LangSmith / Langfuse | Observability + evaluation |
+
+---
+
+## 9️.. Real-World Applications
+
+- Chatbot response quality monitoring
+- RAG system validation
+- AI agent reliability checking
+- Safety and hallucination detection
+- Model benchmarking
+
+---
+
+## 10. Summary
+
+LLM Evaluation is a critical component of modern Generative AI systems.  
+By combining:
+- Metric-based evaluation
+- Human judgment
+- LLM-as-a-Judge
+
+we can build **reliable, safe, and production-ready GenAI applications**.
+
+---
+
+
 
 
 
