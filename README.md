@@ -448,7 +448,7 @@ This lifecycle is the foundation of chatbots, assistants, RAG systems, and AI ag
 - They must be stored using environment variables and never exposed in frontend code.
 
 ## Use Cases  
-Web-based chatbots, customer support systems, internal AI tools, and backends for RAG and agent systems.
+- Web-based chatbots, customer support systems, internal AI tools, and backends for RAG and agent systems.
 --- 
 
 # Natural Language Processing (NLP)
@@ -1064,6 +1064,148 @@ By combining:
 we can build **reliable, safe, and production-ready GenAI applications**.
 
 ---
+# LLM Inference
+## 1️. What is LLM Inference?
+
+LLM Inference is the process of using a trained Large Language Model (LLM) to generate outputs such as text, answers, summaries, or code from a given input prompt.
+
+Training → learning model weights ❌  
+Inference → using learned weights to generate output ✅  
+
+---
+
+## 2️. Inference Pipeline (High Level)
+
+Input Text → Tokenizer → Model → Generated Tokens → Decoder → Output Text
+
+### Components
+
+- **Tokenizer:** Converts text into numerical tokens that the model can understand.
+
+- **Model:** Predicts the next most probable tokens based on input.
+
+- **Decoder:** Converts generated tokens back into readable text.
+
+---
+
+## 3️. Popular Packages for LLM Inference
+
+| Package        | Use Case |
+|----------------|----------|
+| transformers   | Most commonly used (Hugging Face) |
+| torch          | Model execution backend |
+| accelerate     | Multi-GPU and performance optimization |
+| vllm           | High-speed, production-level inference |
+
+---
+
+## 4️. Installing Required Packages
+
+```bash
+pip install transformers torch
+```
+---
+
+## 5. Simple LLM Inference (Step‑by‑Step)
+
+**Example Model**
+We use GPT‑2 because:
+- Small size
+- Works on CPU
+- No authentication required
+---
+##  Code: Basic LLM Inference
+```python
+from transformers import AutoTokenizer, AutoModelForCausalLM
+
+# Load tokenizer and model
+model_name = "gpt2"
+
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(model_name)
+
+# Input prompt
+prompt = "Artificial Intelligence is"
+
+# Tokenize input
+inputs = tokenizer(prompt, return_tensors="pt")
+
+# Generate output
+outputs = model.generate(
+    **inputs,
+    max_new_tokens=50,
+    temperature=0.7,
+    do_sample=True
+)
+
+# Decode tokens to text
+result = tokenizer.decode(outputs[0], skip_special_tokens=True)
+print(result)
+```
+---
+## 6. Explanation of Important Parameters
+| Parameter      | Meaning                                          |
+| -------------- | ------------------------------------------------ |
+| max_new_tokens | Maximum number of tokens to generate             |
+| temperature    | Controls creativity (0.2 = safe, 1.0 = creative) |
+| do_sample      | Enables randomness in output                     |
+
+---
+## 7. Simplified Inference using Pipeline API
+Best for quick **demos, teaching, and seminars.**
+```python
+from transformers import pipeline
+
+generator = pipeline("text-generation", model="gpt2")
+
+output = generator(
+    "Artificial Intelligence is",
+    max_new_tokens=50
+)
+
+print(output[0]["generated_text"])
+```
+---
+## 8. CPU vs GPU Inference
+**CPU Inference (Default)**
+```python
+device = -1
+```
+
+**GPU Inference (CUDA)**
+```python
+device = 0
+
+generator = pipeline(
+    "text-generation",
+    model="gpt2",
+    device=0
+)
+```
+GPU requires:
+- NVIDIA GPU
+- CUDA installed
+- Compatible PyTorch version
+---
+
+## 9. Real‑World Use Cases of LLM Inference
+- Chatbots (ChatGPT-like systems)
+- Resume parsing (ATS systems)
+- Code generation
+- Question answering systems
+- RAG (Retrieval Augmented Generation)
+- AI Agents
+- Content generation
+
+---
+## 10. Key Takeaways
+- Inference ≠ Training
+- Tokenizer + Model + Decoder = LLM Inference
+- Transformers is the industry standard
+- Pipeline API is best for beginners and demos
+- GPT-2 is ideal for classroom and seminar usage
+---
+
 
 
 
