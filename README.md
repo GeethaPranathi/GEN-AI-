@@ -376,6 +376,7 @@ print(words)
 ```css
 ['NLP', 'is', 'powerful', '.', 'It', 'is', 'used', 'in', 'chatbots', '.']
 ```
+---
 ## 7. Stemming (Porter Stemmer)
 
 Stemming reduces words to their **root form** by removing suffixes using rule-based logic.
@@ -407,6 +408,34 @@ print(stemmed_words)
 ```css
 ['run', 'run', 'runner', 'easili']
 ```
+---
+## 8. Lemmatization (WordNet Lemmatizer)
+Lemmatization converts words to their **dictionary base form (lemma)** using linguistic knowledge.
 
+It produces **real and meaningful words**, making it more accurate than stemming.
 
+### Example
+```ngink
+cars → car
+feet → foot
+better → better
+```
+### NLTK Code
+```python
+from nltk.stem import WordNetLemmatizer
+import nltk
+
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+
+lemmatizer = WordNetLemmatizer()
+words = ["running", "cars", "better", "feet"]
+
+lemmatized_words = [lemmatizer.lemmatize(word) for word in words]
+print(lemmatized_words)
+```
+### Output
+```css
+['running', 'car', 'better', 'foot']
+```
 
