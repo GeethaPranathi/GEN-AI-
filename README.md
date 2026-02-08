@@ -257,7 +257,7 @@ A **prompt** is the input given to a generative AI model to guide its response.
 ## Example
 
 **Prompt:**  
-> Explain machine learning in simple terms.
+ Explain machine learning in simple terms.
 
 ➡️ The AI generates a **beginner-friendly explanation** based on the instruction.
 
