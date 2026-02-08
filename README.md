@@ -246,8 +246,7 @@ Generative AI and Large Language Models are transforming how humans interact wit
 ---
 
 # Natural Language Processing (NLP)
-
-
+---
 ## 1. What is Natural Language Processing (NLP)?
 
 Natural Language Processing (NLP) is a branch of Artificial Intelligence that enables machines to **understand, interpret, and process human language** in a meaningful way.
