@@ -2026,6 +2026,8 @@ Task completed automatically.
 
 - Makes decisions
 - Understands tasks
+- 
+---
 
 #### 2. Tools
 
@@ -2038,6 +2040,8 @@ Things the agent can use:
 - Code execution
 - Web search
 
+---
+
 #### 3. Memory
 
 **Stores:**
@@ -2045,6 +2049,8 @@ Things the agent can use:
 - Past conversations
 - Previous actions
 - User preferences
+
+---
 
 #### 4. Planner
 
