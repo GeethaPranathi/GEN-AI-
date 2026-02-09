@@ -659,6 +659,285 @@ print(lemmatized_words)
 - **Stemming removes** suffixes quickly
 - **Lemmatization** produces meaningful base words
 ---
+
+# Transformers
+
+Transformers are the backbone of today’s advanced AI systems such as:
+- Chatbots
+- Machine translation systems
+- Large Language Models (LLMs)
+
+They have revolutionized Natural Language Processing by enabling efficient handling of long-range dependencies using attention mechanisms.
+
+---
+
+## Evolution of Neural Networks Over Time
+---
+
+### 1. Artificial Neural Networks (ANN)
+
+Artificial Neural Networks are the earliest form of neural network models, inspired by the working of the human brain.
+
+---
+
+![WhatsApp Image 2026-02-09 at 12 58 36 PM](https://github.com/user-attachments/assets/8bdefd10-5272-4432-b5de-9b8be9553501)
+
+---
+
+#### Key Characteristics
+
+- Designed to learn and process information similar to the human brain
+- Consists of:
+  - Input layer
+  - One or more hidden layers
+  - Output layer
+- Each connection has:
+  - Weights
+  - Biases (initially assigned randomly)
+- Uses **activation functions** to decide how much information should be passed to the next layer
+- Training involves:
+  - **Forward Propagation**: data flows from input to output
+  - **Backward Propagation**: errors are propagated back to update weights
+- Optimizers are used to minimize loss by updating weights and biases
+- Input and output data remain constant during training; only weights and biases are updated
+---
+
+#### Limitation of ANN
+
+- Cannot handle sequential data
+- Does not retain past information (no memory mechanism)
+- Unsuitable for tasks such as:
+  - Language modeling
+  - Time-series prediction
+  - Speech recognition
+
+---
+## Recurrent Neural Networks (RNN)
+
+## Overview
+Recurrent Neural Networks (RNNs) are a class of neural networks designed to process **sequential data**.  
+Unlike traditional neural networks, RNNs have a **memory component** that allows them to consider previous inputs while processing new inputs.
+
+---
+![WhatsApp Image 2026-02-09 at 1 30 51 PM](https://github.com/user-attachments/assets/6a0cc237-49aa-4c94-99f4-5eb6690a777e)
+
+---
+
+## Example
+**Sentence:**  
+> I love AI  
+
+Each State depens on the previous step 
+
+I -> love-> AI
+---
+## Core Idea
+- Each output depends on the **current input** and the **previous hidden state**.
+- This structure allows RNNs to capture **temporal dependencies** in sequential data.
+
+---
+
+## Applications of RNNs
+- Language modeling
+- Sentiment analysis
+- Speech recognition
+- Music generation
+- Time series forecasting
+
+---
+
+## Problems with RNNs
+
+### Vanishing Gradient Problem
+
+- Difficult to learn **long-term dependencies**
+- Gradients become very small during backpropagation
+---
+
+### Exploding Gradient Problem
+
+- Gradients grow too large
+- Makes training unstable
+---
+
+### Computational Limitation
+
+- Sequential processing makes RNNs **slow to train**
+
+---
+
+## Solution to RNN Limitations
+- Advanced architectures like **LSTM (Long Short-Term Memory)** and **GRU (Gated Recurrent Unit)** were introduced
+- These models handle **long-term dependencies** more effectively
+
+---
+## LSTM (Long Short-Term Memory)
+
+- Designed to overcome the **vanishing gradient problem**
+- Learns **long-term dependencies**
+- Uses a **cell state (Cₜ)** and **hidden state (hₜ)**
+- **Three gates:** Forget, Input, Output 
+.Forget gate:- Dcises what to forget from the previous cell 
+- ⁠Input gate:-decides what new info I have to store in the cell 
+- ⁠Output gate:-it is going to decide what to output as a new hidden state
+---
+## GRU (Gated Recurrent Unit)
+
+- Simplified version of LSTM
+- ⁠GRUs have fewer parameters than LSTMs,leading to simple architecture and optimisation.
+- **Two gates:** Update, Reset 
+- ⁠update gate=Forget+input
+---
+## Usage
+- **LSTM:** Better for complex long-term dependencies  
+- **GRU:** Better for speed and simplicity
+---
+
+# Transformers
+
+Transformers are the backbone of modern AI models such as GPT, BERT, Gemini, and LLaMA.  
+They replaced older sequence models by using **attention instead of recurrence**, enabling efficient understanding of **context, meaning, and relationships** in text.
+
+---
+
+## PART 1: THEORY
+
+## Why Do We Need Transformers?
+
+### Limitations of Earlier Models (RNNs & LSTMs)
+- Process text **word by word**
+- Slow when handling **long sequences**
+- Struggle to capture **long-range dependencies**
+
+### How Transformers Solve These Issues
+- Process all words **at the same time**
+- Use **attention** to focus on important words
+- Scale efficiently on **GPUs**
+- Handle long sequences more effectively
+
+---
+
+## What is Attention?
+
+Attention helps the model decide:
+> **Which words should I focus on while understanding this word?**
+
+### Example
+Sentence:Attention allows the model to understand that:
+- **"it" refers to "animal"**, not "road"
+
+---
+
+## Self-Attention (Simple Explanation)
+
+- Each word looks at **every other word** in the sentence
+- Decides how important other words are for its understanding
+
+Each word generates:
+- **Query (Q)** – What am I looking for?
+- **Key (K)** – What information do I contain?
+- **Value (V)** – What information do I provide?
+
+The model compares **Query with Key** to determine which **Values** to focus on.
+
+---
+
+## Multi-Head Attention
+
+- Uses **multiple attention heads** instead of a single one
+- Each head learns different relationships such as:
+  - Grammar
+  - Semantic meaning
+  - Subject–object relationships
+- This improves the model’s overall understanding
+
+---
+
+## Transformer Architecture (High Level)
+
+A Transformer block consists of:
+- Embedding Layer
+- Positional Encoding
+- Multi-Head Self-Attention
+- Feed Forward Neural Network
+- Residual Connections
+- Layer Normalization
+
+Multiple Transformer blocks are **stacked together** to form the full model.
+
+---
+
+## Why Positional Encoding?
+
+- Transformers process words **in parallel**
+- They do not naturally understand **word order**
+- Positional Encoding adds sequence information to embeddings
+- Helps the model learn **position and order of words**
+
+---
+![WhatsApp Image 2026-02-09 at 1 49 34 PM](https://github.com/user-attachments/assets/9c2b177d-7189-43c8-a5d6-da01c3802dbc)
+
+---
+## Transformer Example (Language Translation)
+
+### Input
+
+- Sentence: `The big red dog`
+
+### Tokenization
+
+- Tokens: `["The", "big", "red", "dog"]`
+
+### Embedding + Positional Encoding
+
+- Convert tokens into vectors
+- Add position information
+
+### Encoder
+
+- Applies self-attention (Q, K, V)
+- Generates contextual representations
+
+### Decoder
+
+- Receives encoder output
+- Uses masked self-attention
+
+### Output Layer
+
+- Linear layer + Softmax
+- Generates translated words
+
+### Output
+
+- French: `Le grand chien rouge`
+- Hindi: `बड़ा लाल कुत्ता`
+---
+## Transformer Model Types
+
+### Encoder-Only Models
+
+Encoder-only models focus on understanding input text by learning rich contextual representations.  
+They are mainly used for tasks like text classification, sentiment analysis, and semantic understanding.  
+**Example:** BERT
+
+---
+
+### Decoder-Only Models
+
+Decoder-only models generate text one token at a time using masked self-attention.  
+They are designed for text generation tasks such as chatbots and language modeling.  
+**Example:** GPT
+
+---
+
+### Encoder–Decoder Models
+
+Encoder–Decoder models combine both components to handle input–output sequence tasks.  
+The encoder processes the input sequence, and the decoder generates the output sequence.  
+They are commonly used for machine translation and summarization.
+
+---
 # ATS (Applicant Tracking System) using Gemini GenAI
 
 ---
@@ -1204,285 +1483,6 @@ GPU requires:
 - Transformers is the industry standard
 - Pipeline API is best for beginners and demos
 - GPT-2 is ideal for classroom and seminar usage
----
-
-# Transformers
-
-Transformers are the backbone of today’s advanced AI systems such as:
-- Chatbots
-- Machine translation systems
-- Large Language Models (LLMs)
-
-They have revolutionized Natural Language Processing by enabling efficient handling of long-range dependencies using attention mechanisms.
-
----
-
-## Evolution of Neural Networks Over Time
----
-
-### 1. Artificial Neural Networks (ANN)
-
-Artificial Neural Networks are the earliest form of neural network models, inspired by the working of the human brain.
-
----
-
-![WhatsApp Image 2026-02-09 at 12 58 36 PM](https://github.com/user-attachments/assets/8bdefd10-5272-4432-b5de-9b8be9553501)
-
----
-
-#### Key Characteristics
-
-- Designed to learn and process information similar to the human brain
-- Consists of:
-  - Input layer
-  - One or more hidden layers
-  - Output layer
-- Each connection has:
-  - Weights
-  - Biases (initially assigned randomly)
-- Uses **activation functions** to decide how much information should be passed to the next layer
-- Training involves:
-  - **Forward Propagation**: data flows from input to output
-  - **Backward Propagation**: errors are propagated back to update weights
-- Optimizers are used to minimize loss by updating weights and biases
-- Input and output data remain constant during training; only weights and biases are updated
----
-
-#### Limitation of ANN
-
-- Cannot handle sequential data
-- Does not retain past information (no memory mechanism)
-- Unsuitable for tasks such as:
-  - Language modeling
-  - Time-series prediction
-  - Speech recognition
-
----
-## Recurrent Neural Networks (RNN)
-
-## Overview
-Recurrent Neural Networks (RNNs) are a class of neural networks designed to process **sequential data**.  
-Unlike traditional neural networks, RNNs have a **memory component** that allows them to consider previous inputs while processing new inputs.
-
----
-![WhatsApp Image 2026-02-09 at 1 30 51 PM](https://github.com/user-attachments/assets/6a0cc237-49aa-4c94-99f4-5eb6690a777e)
-
----
-
-## Example
-**Sentence:**  
-> I love AI  
-
-Each State depens on the previous step 
-
-I -> love-> AI
----
-## Core Idea
-- Each output depends on the **current input** and the **previous hidden state**.
-- This structure allows RNNs to capture **temporal dependencies** in sequential data.
-
----
-
-## Applications of RNNs
-- Language modeling
-- Sentiment analysis
-- Speech recognition
-- Music generation
-- Time series forecasting
-
----
-
-## Problems with RNNs
-
-### Vanishing Gradient Problem
-
-- Difficult to learn **long-term dependencies**
-- Gradients become very small during backpropagation
----
-
-### Exploding Gradient Problem
-
-- Gradients grow too large
-- Makes training unstable
----
-
-### Computational Limitation
-
-- Sequential processing makes RNNs **slow to train**
-
----
-
-## Solution to RNN Limitations
-- Advanced architectures like **LSTM (Long Short-Term Memory)** and **GRU (Gated Recurrent Unit)** were introduced
-- These models handle **long-term dependencies** more effectively
-
----
-## LSTM (Long Short-Term Memory)
-
-- Designed to overcome the **vanishing gradient problem**
-- Learns **long-term dependencies**
-- Uses a **cell state (Cₜ)** and **hidden state (hₜ)**
-- **Three gates:** Forget, Input, Output 
-.Forget gate:- Dcises what to forget from the previous cell 
-- ⁠Input gate:-decides what new info I have to store in the cell 
-- ⁠Output gate:-it is going to decide what to output as a new hidden state
----
-## GRU (Gated Recurrent Unit)
-
-- Simplified version of LSTM
-- ⁠GRUs have fewer parameters than LSTMs,leading to simple architecture and optimisation.
-- **Two gates:** Update, Reset 
-- ⁠update gate=Forget+input
----
-## Usage
-- **LSTM:** Better for complex long-term dependencies  
-- **GRU:** Better for speed and simplicity
----
-
-# Transformers
-
-Transformers are the backbone of modern AI models such as GPT, BERT, Gemini, and LLaMA.  
-They replaced older sequence models by using **attention instead of recurrence**, enabling efficient understanding of **context, meaning, and relationships** in text.
-
----
-
-## PART 1: THEORY
-
-## Why Do We Need Transformers?
-
-### Limitations of Earlier Models (RNNs & LSTMs)
-- Process text **word by word**
-- Slow when handling **long sequences**
-- Struggle to capture **long-range dependencies**
-
-### How Transformers Solve These Issues
-- Process all words **at the same time**
-- Use **attention** to focus on important words
-- Scale efficiently on **GPUs**
-- Handle long sequences more effectively
-
----
-
-## What is Attention?
-
-Attention helps the model decide:
-> **Which words should I focus on while understanding this word?**
-
-### Example
-Sentence:Attention allows the model to understand that:
-- **"it" refers to "animal"**, not "road"
-
----
-
-## Self-Attention (Simple Explanation)
-
-- Each word looks at **every other word** in the sentence
-- Decides how important other words are for its understanding
-
-Each word generates:
-- **Query (Q)** – What am I looking for?
-- **Key (K)** – What information do I contain?
-- **Value (V)** – What information do I provide?
-
-The model compares **Query with Key** to determine which **Values** to focus on.
-
----
-
-## Multi-Head Attention
-
-- Uses **multiple attention heads** instead of a single one
-- Each head learns different relationships such as:
-  - Grammar
-  - Semantic meaning
-  - Subject–object relationships
-- This improves the model’s overall understanding
-
----
-
-## Transformer Architecture (High Level)
-
-A Transformer block consists of:
-- Embedding Layer
-- Positional Encoding
-- Multi-Head Self-Attention
-- Feed Forward Neural Network
-- Residual Connections
-- Layer Normalization
-
-Multiple Transformer blocks are **stacked together** to form the full model.
-
----
-
-## Why Positional Encoding?
-
-- Transformers process words **in parallel**
-- They do not naturally understand **word order**
-- Positional Encoding adds sequence information to embeddings
-- Helps the model learn **position and order of words**
-
----
-![WhatsApp Image 2026-02-09 at 1 49 34 PM](https://github.com/user-attachments/assets/9c2b177d-7189-43c8-a5d6-da01c3802dbc)
-
----
-## Transformer Example (Language Translation)
-
-### Input
-
-- Sentence: `The big red dog`
-
-### Tokenization
-
-- Tokens: `["The", "big", "red", "dog"]`
-
-### Embedding + Positional Encoding
-
-- Convert tokens into vectors
-- Add position information
-
-### Encoder
-
-- Applies self-attention (Q, K, V)
-- Generates contextual representations
-
-### Decoder
-
-- Receives encoder output
-- Uses masked self-attention
-
-### Output Layer
-
-- Linear layer + Softmax
-- Generates translated words
-
-### Output
-
-- French: `Le grand chien rouge`
-- Hindi: `बड़ा लाल कुत्ता`
----
-## Transformer Model Types
-
-### Encoder-Only Models
-
-Encoder-only models focus on understanding input text by learning rich contextual representations.  
-They are mainly used for tasks like text classification, sentiment analysis, and semantic understanding.  
-**Example:** BERT
-
----
-
-### Decoder-Only Models
-
-Decoder-only models generate text one token at a time using masked self-attention.  
-They are designed for text generation tasks such as chatbots and language modeling.  
-**Example:** GPT
-
----
-
-### Encoder–Decoder Models
-
-Encoder–Decoder models combine both components to handle input–output sequence tasks.  
-The encoder processes the input sequence, and the decoder generates the output sequence.  
-They are commonly used for machine translation and summarization.
-
 ---
 
 
