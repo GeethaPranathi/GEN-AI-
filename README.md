@@ -1206,7 +1206,7 @@ GPU requires:
 - GPT-2 is ideal for classroom and seminar usage
 ---
 
-## Transformers
+# Transformers
 
 Transformers are the backbone of today’s advanced AI systems such as:
 - Chatbots
@@ -1223,9 +1223,15 @@ They have revolutionized Natural Language Processing by enabling efficient handl
 ### 1. Artificial Neural Networks (ANN)
 
 Artificial Neural Networks are the earliest form of neural network models, inspired by the working of the human brain.
+
+---
+
+![WhatsApp Image 2026-02-09 at 12 58 36 PM](https://github.com/user-attachments/assets/8bdefd10-5272-4432-b5de-9b8be9553501)
+
 ---
 
 #### Key Characteristics
+
 - Designed to learn and process information similar to the human brain
 - Consists of:
   - Input layer
@@ -1243,6 +1249,7 @@ Artificial Neural Networks are the earliest form of neural network models, inspi
 ---
 
 #### Limitation of ANN
+
 - Cannot handle sequential data
 - Does not retain past information (no memory mechanism)
 - Unsuitable for tasks such as:
@@ -1251,7 +1258,7 @@ Artificial Neural Networks are the earliest form of neural network models, inspi
   - Speech recognition
 
 ---
-# Recurrent Neural Networks (RNN)
+## Recurrent Neural Networks (RNN)
 
 ## Overview
 Recurrent Neural Networks (RNNs) are a class of neural networks designed to process **sequential data**.  
@@ -1264,6 +1271,7 @@ Unlike traditional neural networks, RNNs have a **memory component** that allows
 > I love AI  
 
 Each State depens on the previous step 
+
 I -> love-> AI
 ---
 ## Core Idea
@@ -1284,16 +1292,19 @@ I -> love-> AI
 ## Problems with RNNs
 
 ### Vanishing Gradient Problem
+
 - Difficult to learn **long-term dependencies**
 - Gradients become very small during backpropagation
 ---
 
 ### Exploding Gradient Problem
+
 - Gradients grow too large
 - Makes training unstable
 ---
 
 ### Computational Limitation
+
 - Sequential processing makes RNNs **slow to train**
 
 ---
