@@ -1218,10 +1218,12 @@ They have revolutionized Natural Language Processing by enabling efficient handl
 ---
 
 ## Evolution of Neural Networks Over Time
+---
 
 ### 1. Artificial Neural Networks (ANN)
 
 Artificial Neural Networks are the earliest form of neural network models, inspired by the working of the human brain.
+---
 
 #### Key Characteristics
 - Designed to learn and process information similar to the human brain
@@ -1238,6 +1240,7 @@ Artificial Neural Networks are the earliest form of neural network models, inspi
   - **Backward Propagation**: errors are propagated back to update weights
 - Optimizers are used to minimize loss by updating weights and biases
 - Input and output data remain constant during training; only weights and biases are updated
+---
 
 #### Limitation of ANN
 - Cannot handle sequential data
@@ -1248,7 +1251,79 @@ Artificial Neural Networks are the earliest form of neural network models, inspi
   - Speech recognition
 
 ---
+# Recurrent Neural Networks (RNN)
 
+## Overview
+Recurrent Neural Networks (RNNs) are a class of neural networks designed to process **sequential data**.  
+Unlike traditional neural networks, RNNs have a **memory component** that allows them to consider previous inputs while processing new inputs.
+
+---
+
+## Example
+**Sentence:**  
+> I love AI  
+
+Each State depens on the previous step 
+I -> love-> AI
+---
+## Core Idea
+- Each output depends on the **current input** and the **previous hidden state**.
+- This structure allows RNNs to capture **temporal dependencies** in sequential data.
+
+---
+
+## Applications of RNNs
+- Language modeling
+- Sentiment analysis
+- Speech recognition
+- Music generation
+- Time series forecasting
+
+---
+
+## Problems with RNNs
+
+### Vanishing Gradient Problem
+- Difficult to learn **long-term dependencies**
+- Gradients become very small during backpropagation
+---
+
+### Exploding Gradient Problem
+- Gradients grow too large
+- Makes training unstable
+---
+
+### Computational Limitation
+- Sequential processing makes RNNs **slow to train**
+
+---
+
+## Solution to RNN Limitations
+- Advanced architectures like **LSTM (Long Short-Term Memory)** and **GRU (Gated Recurrent Unit)** were introduced
+- These models handle **long-term dependencies** more effectively
+
+---
+## LSTM (Long Short-Term Memory)
+
+- Designed to overcome the **vanishing gradient problem**
+- Learns **long-term dependencies**
+- Uses a **cell state (Cₜ)** and **hidden state (hₜ)**
+- **Three gates:** Forget, Input, Output 
+.Forget gate:- Dcises what to forget from the previous cell 
+- ⁠Input gate:-decides what new info I have to store in the cell 
+- ⁠Output gate:-it is going to decide what to output as a new hidden state
+---
+## GRU (Gated Recurrent Unit)
+
+- Simplified version of LSTM
+- ⁠GRUs have fewer parameters than LSTMs,leading to simple architecture and optimisation.
+- **Two gates:** Update, Reset 
+- ⁠update gate=Forget+input
+---
+## Usage
+- **LSTM:** Better for complex long-term dependencies  
+- **GRU:** Better for speed and simplicity
+---
 
 
 
