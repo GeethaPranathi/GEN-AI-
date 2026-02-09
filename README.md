@@ -660,6 +660,261 @@ print(lemmatized_words)
 - **Lemmatization** produces meaningful base words
 ---
 
+# Embeddings and Cosine Similarity
+
+## 1. What is an Embedding?
+
+An embedding is a way of converting data (words, sentences, images, audio, etc.) into a list of numbers called a vector.
+
+- Humans understand meaning through language.  
+- Computers understand numbers.
+
+So embeddings act like a translator between language and mathematics.
+
+**Example:**
+
+“cat”  → [0.12, -0.44, 0.90, ...]  
+“dog”  → [0.10, -0.40, 0.88, ...]
+
+**Notice:**
+
+- Numbers are different
+- But similar meanings produce similar vectors. 
+---
+
+## Why do we need embeddings?
+
+- Computers don’t understand language directly.
+    
+ ### Embeddings convert meaning into math so machines can:
+
+- Search similar texts  
+- Recommend content  
+- Detect spam  
+- Power AI chatbots  
+---
+
+## Why Embeddings Exist
+
+- Problem with Traditional Computers
+- Old or traditional computer systems don’t understand meaning — they only compare exact words.
+
+**Example:**
+
+"car" and "automobile"
+
+**For humans:**  
+👉 Both mean the same thing.
+
+**But for a traditional computer:**
+
+"car" ≠ "automobile"
+
+because the spelling is different.
+
+**So if someone searches:**
+
+"buy a car"
+
+**The system may NOT show results containing:**
+
+"buy an automobile"
+
+- This is called keyword matching — it looks only at words, not meaning.
+---
+
+## How Embeddings Solve This Problem
+
+Embeddings convert words into numbers (vectors) based on their meaning.
+
+**Instead of seeing:**
+
+car → just a word  
+automobile → just another word
+
+**AI sees:**
+
+car → [0.21, -0.55, 0.77, ...]  
+automobile → [0.20, -0.53, 0.75, ...]
+
+**Notice:** 
+- The numbers are very similar.
+
+- This means both words are placed close together in something called vector space (a mathematical map).
+
+- So now the computer understands:
+
+car ≈ automobile  
+
+**This allows AI to understand:**  
+- context  
+- similarity  
+- relationships
+---
+
+##  Embedding Space  
+
+**Think of a huge mathematical space where:**  
+- Each word or sentence = a point.  
+- Similar meanings = nearby points.  
+- Different meanings = far apart.  
+---
+
+##  Types of Embeddings  
+
+-  **Word Embeddings**  
+
+Represent individual words.  
+**Examples:**
+- Word2Vec  
+- GloVe  
+- FastText  
+---
+
+- **Sentence Embeddings**  
+
+- Represent whole sentences.  
+- Used in chatbots and search.
+
+---
+
+![WhatsApp Image 2026-02-09 at 4 26 20 PM](https://github.com/user-attachments/assets/9329e91c-3a9d-4bc1-bf87-89933ec9f364)
+
+---
+
+- **Image Embeddings**  
+
+Convert images into vectors for recognition.
+
+---
+
+##  How Embeddings Are Created  
+
+- AI reads huge text data.  
+- Learns which words appear together.  
+- Adjusts numbers so similar words get similar vectors.
+- The model learns patterns automatically.
+---
+##  Where Embeddings Are Used  
+
+**Real-world applications:**  
+- Search engines  
+- Recommendation systems  
+- Chatbots  
+- Translation  
+- Plagiarism detection  
+- Semantic search  
+
+## What is Cosine Similarity?
+
+- Cosine similarity measures how similar two embeddings are by calculating the angle between their vectors.
+- Instead of comparing size, it compares direction.
+  
+---
+
+### Simple Analogy  
+
+Think of two arrows:
+
+Same direction → very similar  
+Opposite direction → very different  
+
+Even if arrows are long or short, direction matters most.
+
+---
+
+### Formula
+
+**You don’t need heavy math — just say:**
+
+Cosine Similarity = cos(angle between vectors)
+
+---
+
+**Values range from:**
+
+Value    Meaning  
+1        Exactly similar  
+0        Not related  
+-1       Opposite meaning  
+
+---
+![WhatsApp Image 2026-02-09 at 4 25 39 PM](https://github.com/user-attachments/assets/cee37a31-a7f1-4035-bdf2-4cc35e55a6c6)
+
+---
+
+
+**Example for Students** 
+
+Embedding of:
+
+"I love programming"  
+"I enjoy coding"
+
+- Angle is small → similarity close to 1
+
+**But:**
+
+"I love programming"  
+"I hate bugs"
+
+- Larger angle → lower similarity  
+
+---
+
+### Step-by-Step  
+
+- Step 1 — Choose 3 Sentences
+
+**Write on board:**  
+**A:** I love coding  
+**B:** I enjoy programming  
+**C:** I hate exams  
+
+ Imagine each sentence is an arrow (vector).
+ 
+---
+
+- Step 2  
+
+ Their arrows point in almost the same direction → cosine similarity ≈ 1.
+
+---
+
+- Step 3 — Show Contrast  
+
+**Compare:**  
+A vs C  
+
+Meaning is different → arrows have bigger angle → similarity low.
+
+---
+
+- Step 4 — One-Line Explanation  
+
+“Cosine similarity doesn’t care about sentence length, only the direction of meaning.”
+
+---
+
+## How Embeddings + Cosine Similarity Work Together  
+
+**Workflow:**
+
+- Text → converted into embeddings (numbers)  
+- Compare embeddings using cosine similarity  
+- System finds closest meaning  
+
+---
+
+**This is used in:**
+
+- Google search  
+- Recommendation systems  
+- ChatGPT-style AI  
+- Plagiarism detection
+  
+---
+
 # Transformers
 
 Transformers are the backbone of today’s advanced AI systems such as:
