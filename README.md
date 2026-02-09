@@ -1206,6 +1206,48 @@ GPU requires:
 - GPT-2 is ideal for classroom and seminar usage
 ---
 
+## Transformers
+
+Transformers are the backbone of today’s advanced AI systems such as:
+- Chatbots
+- Machine translation systems
+- Large Language Models (LLMs)
+
+They have revolutionized Natural Language Processing by enabling efficient handling of long-range dependencies using attention mechanisms.
+
+---
+
+## Evolution of Neural Networks Over Time
+
+### 1. Artificial Neural Networks (ANN)
+
+Artificial Neural Networks are the earliest form of neural network models, inspired by the working of the human brain.
+
+#### Key Characteristics
+- Designed to learn and process information similar to the human brain
+- Consists of:
+  - Input layer
+  - One or more hidden layers
+  - Output layer
+- Each connection has:
+  - Weights
+  - Biases (initially assigned randomly)
+- Uses **activation functions** to decide how much information should be passed to the next layer
+- Training involves:
+  - **Forward Propagation**: data flows from input to output
+  - **Backward Propagation**: errors are propagated back to update weights
+- Optimizers are used to minimize loss by updating weights and biases
+- Input and output data remain constant during training; only weights and biases are updated
+
+#### Limitation of ANN
+- Cannot handle sequential data
+- Does not retain past information (no memory mechanism)
+- Unsuitable for tasks such as:
+  - Language modeling
+  - Time-series prediction
+  - Speech recognition
+
+---
 
 
 
