@@ -1265,6 +1265,9 @@ Recurrent Neural Networks (RNNs) are a class of neural networks designed to proc
 Unlike traditional neural networks, RNNs have a **memory component** that allows them to consider previous inputs while processing new inputs.
 
 ---
+![WhatsApp Image 2026-02-09 at 1 30 51 PM](https://github.com/user-attachments/assets/6a0cc237-49aa-4c94-99f4-5eb6690a777e)
+
+---
 
 ## Example
 **Sentence:**  
@@ -1336,8 +1339,151 @@ I -> love-> AI
 - **GRU:** Better for speed and simplicity
 ---
 
+# Transformers
 
+Transformers are the backbone of modern AI models such as GPT, BERT, Gemini, and LLaMA.  
+They replaced older sequence models by using **attention instead of recurrence**, enabling efficient understanding of **context, meaning, and relationships** in text.
 
+---
+
+## PART 1: THEORY
+
+## Why Do We Need Transformers?
+
+### Limitations of Earlier Models (RNNs & LSTMs)
+- Process text **word by word**
+- Slow when handling **long sequences**
+- Struggle to capture **long-range dependencies**
+
+### How Transformers Solve These Issues
+- Process all words **at the same time**
+- Use **attention** to focus on important words
+- Scale efficiently on **GPUs**
+- Handle long sequences more effectively
+
+---
+
+## What is Attention?
+
+Attention helps the model decide:
+> **Which words should I focus on while understanding this word?**
+
+### Example
+Sentence:Attention allows the model to understand that:
+- **"it" refers to "animal"**, not "road"
+
+---
+
+## Self-Attention (Simple Explanation)
+
+- Each word looks at **every other word** in the sentence
+- Decides how important other words are for its understanding
+
+Each word generates:
+- **Query (Q)** – What am I looking for?
+- **Key (K)** – What information do I contain?
+- **Value (V)** – What information do I provide?
+
+The model compares **Query with Key** to determine which **Values** to focus on.
+
+---
+
+## Multi-Head Attention
+
+- Uses **multiple attention heads** instead of a single one
+- Each head learns different relationships such as:
+  - Grammar
+  - Semantic meaning
+  - Subject–object relationships
+- This improves the model’s overall understanding
+
+---
+
+## Transformer Architecture (High Level)
+
+A Transformer block consists of:
+- Embedding Layer
+- Positional Encoding
+- Multi-Head Self-Attention
+- Feed Forward Neural Network
+- Residual Connections
+- Layer Normalization
+
+Multiple Transformer blocks are **stacked together** to form the full model.
+
+---
+
+## Why Positional Encoding?
+
+- Transformers process words **in parallel**
+- They do not naturally understand **word order**
+- Positional Encoding adds sequence information to embeddings
+- Helps the model learn **position and order of words**
+
+---
+![WhatsApp Image 2026-02-09 at 1 49 34 PM](https://github.com/user-attachments/assets/9c2b177d-7189-43c8-a5d6-da01c3802dbc)
+
+---
+## Transformer Example (Language Translation)
+
+### Input
+
+- Sentence: `The big red dog`
+
+### Tokenization
+
+- Tokens: `["The", "big", "red", "dog"]`
+
+### Embedding + Positional Encoding
+
+- Convert tokens into vectors
+- Add position information
+
+### Encoder
+
+- Applies self-attention (Q, K, V)
+- Generates contextual representations
+
+### Decoder
+
+- Receives encoder output
+- Uses masked self-attention
+
+### Output Layer
+
+- Linear layer + Softmax
+- Generates translated words
+
+### Output
+
+- French: `Le grand chien rouge`
+- Hindi: `बड़ा लाल कुत्ता`
+---
+## Transformer Model Types
+
+### Encoder-Only Models
+
+Encoder-only models focus on understanding input text by learning rich contextual representations.  
+They are mainly used for tasks like text classification, sentiment analysis, and semantic understanding.  
+**Example:** BERT
+
+---
+
+### Decoder-Only Models
+
+Decoder-only models generate text one token at a time using masked self-attention.  
+They are designed for text generation tasks such as chatbots and language modeling.  
+**Example:** GPT
+
+---
+
+### Encoder–Decoder Models
+
+Encoder–Decoder models combine both components to handle input–output sequence tasks.  
+The encoder processes the input sequence, and the decoder generates the output sequence.  
+They are commonly used for machine translation and summarization.
+
+---
 
 
 
